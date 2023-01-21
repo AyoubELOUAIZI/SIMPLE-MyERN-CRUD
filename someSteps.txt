@@ -1,0 +1,5 @@
+create tow folders client and server with file for steps
+npx create-react-app .
+npm init
+npm i express mysql
+
