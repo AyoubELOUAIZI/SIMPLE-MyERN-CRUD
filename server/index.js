@@ -47,7 +47,7 @@ app.post("/create", (req, res) => {
 // This code is handling a POST request to the / create endpoint on the server.
 // When a request is made to this endpoint, the server extracts the values for name,
 //  age, country, position, and wage from the request body.
-//-----------------------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------------------------------------//
 app.get("/employees", (req, res) => {
     // Query the database to select all records from the 'employees' table
     db.query("SELECT * FROM employees", (err, result) => {
@@ -61,7 +61,53 @@ app.get("/employees", (req, res) => {
     });
 });
 
-//-----------------------------------------------------------------------------------------//
+// This code is handling a GET request to the / employees endpoint on the server.
+// When a request is made to this endpoint, the server uses the db.
+// query() method to execute a SELECT statement that selects all records from the employees table in the database.
+
+// The query method takes in a SQL statement as the first parameter and a callback function
+//  as a second parameter, which is used to handle any errors or successful results.
+// If there is no error, then the query result is sent as a response to the client.
+// The client can then use this information to display the employees data on the front - end.
+//-------------------------------------------------------------------------------------------------------------//
+app.put("/update", (req, res) => {
+    // Get the id and wage values from the request body
+    const id = req.body.id;
+    const wage = req.body.wage;
+
+    // Update the employees table with the new wage value, where the id matches the one provided
+    db.query(
+        "UPDATE employees SET wage = ? WHERE id = ?",
+        [wage, id],
+        (err, result) => {
+            // Check for errors
+            if (err) {
+                console.log(err);
+            } else {
+                // Send the query result as a response to the client
+                res.send(result);
+            }
+        }
+    );
+});
+//-------------------------------------------------------------------------------------------------------------//
+app.delete("/delete/:id", (req, res) => {
+    // Get the id from the request parameters
+    const id = req.params.id;
+
+    // Delete the record from the employees table where the id matches the one provided
+    db.query("DELETE FROM employees WHERE id = ?", id, (err, result) => {
+        // Check for errors
+        if (err) {
+            console.log(err);
+        } else {
+            // Send the query result as a response to the client
+            res.send(result);
+        }
+    });
+});
+
+//-------------------------------------------------------------------------------------------------------------//
 
 
 
