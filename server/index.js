@@ -21,6 +21,13 @@ app.get('/', (req, res) => {
 
 //-------------------------------------------------------------------------------------------//
 app.post("/create", (req, res) => {
+
+    console.log("-------------------------------")
+    console.log(req);
+    console.log("-------------------------------")
+    console.log("-------------------------------")
+    console.log(res);
+    console.log("-------------------------------")
     // Get the values from the request body
     const name = req.body.name;
     const age = req.body.age;
@@ -92,6 +99,7 @@ app.put("/update", (req, res) => {
 });
 //-------------------------------------------------------------------------------------------------------------//
 app.delete("/delete/:id", (req, res) => {
+    console.log(req);
     // Get the id from the request parameters
     const id = req.params.id;
 

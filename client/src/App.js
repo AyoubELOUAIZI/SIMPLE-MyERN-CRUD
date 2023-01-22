@@ -41,7 +41,6 @@ function App() {
     });
   };
   //------------------------------------------2 get-----------------------------------------------//
-
   const getEmployees = () => {
     Axios.get(`${URL}/employees`).then((response) => {
       setEmployeeList(response.data);
@@ -125,14 +124,11 @@ function App() {
           }}
         />
         <button onClick={addEmployee}>Add Employee</button>
-        <p>________________________________________________________________________________</p>
-        <p>___________________________________________________________________________________________________________</p>
+        <button onClick={getEmployees}>Show Employees</button>
+
       </div>
-    
-    
       {/* 0000000000000000000000000000000000000 display Employees 0000000000000000000000000000000000000 */}
       <div className="employees">
-        <button onClick={getEmployees}>Show Employees</button>
 
         {/*-----------------------------------------------------------------------------------------*/}
         {employeeList.map((val, key) => {
