@@ -5,8 +5,6 @@ import Axios from "axios";
 //costomise the url
 const port = 8000;//this is the port where the backend server is listening
 const URL = `http://localhost:${port}`;
-console.log(URL)
-
 
 function App() {
   const [name, setName] = useState("");
@@ -84,6 +82,7 @@ function App() {
     <div className="App">
       <div className="information">
         {/*---------------------1 name----------------------*/}
+        <div className="info">
         <label>Name:</label>
         <input
           type="text"
@@ -91,7 +90,9 @@ function App() {
             setName(event.target.value);
           }}
         />
+        </div>
         {/*---------------------2 age----------------------*/}
+        <div className="info">
         <label>Age:</label>
         <input
           type="number"
@@ -99,7 +100,9 @@ function App() {
             setAge(event.target.value);
           }}
         />
+      </div>
         {/*---------------------3 country----------------------*/}
+        <div className="info">
         <label>Country:</label>
         <input
           type="text"
@@ -107,7 +110,9 @@ function App() {
             setCountry(event.target.value);
           }}
         />
+        </div>
         {/*---------------------4 position----------------------*/}
+        <div className="info">
         <label>Position:</label>
         <input
           type="text"
@@ -115,7 +120,9 @@ function App() {
             setPosition(event.target.value);
           }}
         />
+        </div>
         {/*---------------------5 salary----------------------*/}
+        <div className="info">
         <label>Wage (year):</label>
         <input
           type="number"
@@ -126,6 +133,7 @@ function App() {
         <button onClick={addEmployee}>Add Employee</button>
         <button onClick={getEmployees}>Show Employees</button>
 
+      </div>
       </div>
       {/* 0000000000000000000000000000000000000 display Employees 0000000000000000000000000000000000000 */}
       <div className="employees">

@@ -21,6 +21,14 @@ body{
  position:sticky;
  border-radius: 20px;
 }
+.info{
+  
+justify-content: left;
+margin-left: 10px;
+}
+label{
+  margin-left: 12px;
+}
 
 input {
   width: 90%;
