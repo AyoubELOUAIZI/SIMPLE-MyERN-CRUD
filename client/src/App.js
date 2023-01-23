@@ -152,7 +152,7 @@ function App() {
               <div>
                 <input
                   type="text"
-                  placeholder="2000..."
+                  placeholder="edit salary here..."
                   onChange={(event) => {
                     setNewWage(event.target.value);
                   }}
